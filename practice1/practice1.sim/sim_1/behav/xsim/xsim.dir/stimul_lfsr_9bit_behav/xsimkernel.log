@@ -1,0 +1,7 @@
+Running: xsim.dir/stimul_lfsr_9bit_behav/xsimk.exe -simmode gui -wdb stimul_lfsr_9bit_behav.wdb -simrunnum 0 -socket 14173
+Design successfully loaded
+Design Loading Memory Usage: 7656 KB (Peak: 7656 KB)
+Design Loading CPU Usage: 77 ms
+Simulation completed
+Simulation Memory Usage: 8460 KB (Peak: 8460 KB)
+Simulation CPU Usage: 93 ms
