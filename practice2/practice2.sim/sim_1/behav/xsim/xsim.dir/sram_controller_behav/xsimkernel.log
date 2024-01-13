@@ -1,7 +1,0 @@
-Running: xsim.dir/sram_controller_behav/xsimk.exe -simmode gui -wdb sram_controller_behav.wdb -simrunnum 0 -socket 13198
-Design successfully loaded
-Design Loading Memory Usage: 7924 KB (Peak: 7924 KB)
-Design Loading CPU Usage: 30 ms
-Simulation completed
-Simulation Memory Usage: 9136 KB (Peak: 9136 KB)
-Simulation CPU Usage: 46 ms
