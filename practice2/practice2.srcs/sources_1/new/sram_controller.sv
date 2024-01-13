@@ -16,6 +16,7 @@ module sram_controller #(
 	parameter DWIDTH = 8,
 	parameter NUM_TEST_DATA = 10
 )
+
 (
 	input 	wire  clk,
 	output	logic [AWIDTH-1:0] addr,

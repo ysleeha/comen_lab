@@ -2,7 +2,7 @@
 
 //`include "../sources_1/new/light_fsm.sv"
 
-module tb_traffic_fsm;
+module tb_light_fsm;
     
     // input 
     logic tb_clk;
