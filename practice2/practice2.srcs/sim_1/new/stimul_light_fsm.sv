@@ -1,8 +1,9 @@
+
 `timescale 1ns / 1ps
 
 //`include "../sources_1/new/light_fsm.sv"
 
-module tb_traffic_fsm;
+module stimul_light_fsm;
     
     // input 
     logic tb_clk;
