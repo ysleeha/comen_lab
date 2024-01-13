@@ -1,7 +1,7 @@
-
 `timescale 1ns / 1ps
 
 //`include "../sources_1/new/light_fsm.sv"
+
 
 module stimul_light_fsm;
     

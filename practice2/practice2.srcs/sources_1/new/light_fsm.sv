@@ -10,6 +10,7 @@ typedef enum logic [1:0] {
 	LEFT
 } traffic_light;   
 
+
 module light_fsm (
     
     output  traffic_light   north, // north = green, yellow, red, left
