@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sun Jan 14 02:09:08 2024
+# Process ID: 4696
+# Current directory: C:/comen_lab/practice2/practice2.runs/ila_sram_ctrl_synth_1
+# Command line: vivado.exe -log ila_sram_ctrl.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ila_sram_ctrl.tcl
+# Log file: C:/comen_lab/practice2/practice2.runs/ila_sram_ctrl_synth_1/ila_sram_ctrl.vds
+# Journal file: C:/comen_lab/practice2/practice2.runs/ila_sram_ctrl_synth_1\vivado.jou
+# Running On: DESKTOP-GLH3044, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 4, Host memory: 17024 MB
+#-----------------------------------------------------------
+source ila_sram_ctrl.tcl -notrace

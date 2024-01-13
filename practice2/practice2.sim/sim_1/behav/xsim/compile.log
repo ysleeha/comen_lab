@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/comen_lab/practice2/practice2.gen/sources_1/ip/vio_0/sim/vio_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vio_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/comen_lab/practice2/practice2.gen/sources_1/ip/ila_sram_ctrl/sim/ila_sram_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ila_sram_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/comen_lab/practice2/practice2.gen/sources_1/ip/mmcm_50m/mmcm_50m_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmcm_50m_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/comen_lab/practice2/practice2.gen/sources_1/ip/mmcm_50m/mmcm_50m.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mmcm_50m

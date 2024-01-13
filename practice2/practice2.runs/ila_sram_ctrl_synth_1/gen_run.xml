@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="ila_sram_ctrl_synth_1" LaunchPart="xa7a35tcsg324-1I" LaunchTime="1705165742">
+  <File Type="PA-TCL" Name="ila_sram_ctrl.tcl"/>
+  <File Type="REPORTS-TCL" Name="ila_sram_ctrl_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ila_sram_ctrl.vds"/>
+  <File Type="RDS-UTIL" Name="ila_sram_ctrl_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ila_sram_ctrl_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="ila_sram_ctrl.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_sram_ctrl" RelGenDir="$PGENDIR/ila_sram_ctrl">
+    <File Path="$PSRCDIR/sources_1/ip/ila_sram_ctrl/ila_sram_ctrl.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ila_sram_ctrl"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ila_sram_ctrl" RelGenDir="$PGENDIR/ila_sram_ctrl">
+    <File Path="$PSRCDIR/sources_1/ip/ila_sram_ctrl/ila_sram_ctrl.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="ila_sram_ctrl"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/light_fsm.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

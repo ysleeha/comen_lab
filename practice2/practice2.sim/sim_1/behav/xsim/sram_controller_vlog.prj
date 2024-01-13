@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../practice2.ip_user_files/ipstatic" \
+"../../../../practice2.gen/sources_1/ip/vio_0/sim/vio_0.v" \
+"../../../../practice2.gen/sources_1/ip/ila_sram_ctrl/sim/ila_sram_ctrl.v" \
+"../../../../practice2.gen/sources_1/ip/mmcm_50m/mmcm_50m_clk_wiz.v" \
+"../../../../practice2.gen/sources_1/ip/mmcm_50m/mmcm_50m.v" \
+
+sv xil_defaultlib  --include "../../../../practice2.ip_user_files/ipstatic" \
+"../../../../practice2.srcs/sources_1/new/sram_controller.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
