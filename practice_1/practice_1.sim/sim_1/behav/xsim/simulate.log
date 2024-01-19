@@ -1,0 +1,18 @@
+Time resolution is 1 ps
+#Start#
+[0] EN binary code = 00000000, EN gray code = 00000000, DE binary code = 00000000
+[1] EN binary code = 00000001, EN gray code = 00000011, DE binary code = 00000001
+[2] EN binary code = 00000010, EN gray code = 00000110, DE binary code = 00000010
+[3] EN binary code = 00000011, EN gray code = 00000101, DE binary code = 00000011
+[4] EN binary code = 00000100, EN gray code = 00001100, DE binary code = 00000100
+[5] EN binary code = 00000101, EN gray code = 00001111, DE binary code = 00000101
+[6] EN binary code = 00000110, EN gray code = 00001010, DE binary code = 00000110
+[7] EN binary code = 00000111, EN gray code = 00001001, DE binary code = 00000111
+[8] EN binary code = 00001000, EN gray code = 00011000, DE binary code = 00001000
+[9] EN binary code = 00001001, EN gray code = 00011011, DE binary code = 00001001
+
+
+Success : 10
+Fail : 0
+
+$finish called at time : 50 ns : File "C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_gray_encoder.sv" Line 85

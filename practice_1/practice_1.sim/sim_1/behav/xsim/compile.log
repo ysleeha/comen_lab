@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/gray_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gray_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/gray_encoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gray_encoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_gray_encoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stimul_gray_encoder

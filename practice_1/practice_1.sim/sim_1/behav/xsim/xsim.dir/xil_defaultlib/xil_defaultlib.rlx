@@ -1,0 +1,10 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+C:/comen_lab/practice_1/practice_1.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_full_adder_8.sv,1705610750,systemVerilog,,,,stimul_full_adder_8,,uvm,,,,,,
+C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_gray_encoder.sv,1705611016,systemVerilog,,,,stimul_gray_encoder,,uvm,,,,,,
+C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/full_adder_8.sv,1705610233,systemVerilog,,C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_full_adder_8.sv,,f_a;full_adder_8,,uvm,,,,,,
+C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/gray_decoder.sv,1705610550,systemVerilog,,C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/gray_encoder.sv,,gray_decoder,,uvm,,,,,,
+C:/comen_lab/practice_1/practice_1.srcs/sources_1/new/gray_encoder.sv,1705610427,systemVerilog,,C:/comen_lab/practice_1/practice_1.srcs/sim_1/new/stimul_gray_encoder.sv,,gray_encoder,,uvm,,,,,,
