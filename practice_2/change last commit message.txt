@@ -1,6 +1,6 @@
 Use only to change the last message. (No modify) 
 
-아무 값 입력 : 3
+아무 값 입력 : 2
 
 1. go to directory 
 
