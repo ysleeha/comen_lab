@@ -1,0 +1,6 @@
+verilog xil_defaultlib  \
+"../../../../practice_2.gen/sources_1/ip/fifo_dual/sim/fifo_dual.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

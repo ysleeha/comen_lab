@@ -1,7 +1,0 @@
-Running: xsim.dir/stimul_light_fsm_behav/xsimk.exe -simmode gui -wdb stimul_light_fsm_behav.wdb -simrunnum 0 -socket 2134
-Design successfully loaded
-Design Loading Memory Usage: 7484 KB (Peak: 7484 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 8100 KB (Peak: 8100 KB)
-Simulation CPU Usage: 15 ms
