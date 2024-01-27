@@ -2,8 +2,12 @@
 2020.2
 Feb 21 2023
 20:21:35
-C:/comen_lab/practice_3/practice_3.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.sim/sim_1/behav/xsim/glbl.v,1706364583,verilog,,,,glbl,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_light_fsm.sv,1706369302,systemVerilog,,,,tb_light_fsm,,uvm,,,,,,
 C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_main.sv,1706360643,systemVerilog,,,,tb_main,,uvm,,,,,,
-C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_uart_tx.sv,1706362013,systemVerilog,,,,tb_uart_tx,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_main_light_fsm.sv,1706373755,systemVerilog,,,,tb_main_light_fsm,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_uart_tx.sv,1706364583,systemVerilog,,,,tb_uart_tx,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sources_1/new/light_fsm.sv,1706372686,systemVerilog,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_light_fsm.sv,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_light_fsm.sv,,$unit_light_fsm_sv_2666240019;light_fsm,,uvm,,,,,,
 C:/comen_lab/practice_3/practice_3.srcs/sources_1/new/main.sv,1706360557,systemVerilog,,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_main.sv,,main,,uvm,,,,,,
-C:/comen_lab/practice_3/practice_3.srcs/sources_1/new/uart_tx.sv,1706361176,systemVerilog,,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_uart_tx.sv,,uart_tx,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sources_1/new/main_light_fsm.sv,1706373556,systemVerilog,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_main_light_fsm.sv,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_main_light_fsm.sv,,$unit_main_light_fsm_sv_3264919294;main_light_fsm,,uvm,,,,,,
+C:/comen_lab/practice_3/practice_3.srcs/sources_1/new/uart_tx.sv,1706374210,systemVerilog,,C:/comen_lab/practice_3/practice_3.srcs/sim_1/new/tb_uart_tx.sv,,uart_tx,,uvm,,,,,,

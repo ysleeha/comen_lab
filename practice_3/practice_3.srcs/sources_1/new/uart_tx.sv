@@ -26,12 +26,6 @@ module uart_tx
     //reg [7:0] cnt_10ms;
     //logic [7:0] data;
     
-    //    vio_0 vio
-    //    (
-    //        .clk         (clk),
-    //        .probe_out0  (rst)
-    //    );
-    
     // 20Mhz -> 1Mhz 
     always @(posedge clk) begin
         cnt_uart_clk <= cnt_uart_clk + 1; 
@@ -94,18 +88,18 @@ module uart_tx
     end
     
     initial begin 
-        uart_clk <= 0;
-        cnt_uart_clk <=0;
+        uart_clk        <= 0;
+        cnt_uart_clk    <= 0;
     end
     
     // Output Logic 
     always @(posedge uart_clk or negedge rst) begin
         
         if(!rst) begin 
-            tx_reg          <= 1;
-            cnt_data_bit    <= 0;
-            cnt_data_byte   <= 0;
-            cnt_wait_1sec_ticks  <= 0;
+            tx_reg              <= 1;
+            cnt_data_bit        <= 0;
+            cnt_data_byte       <= 0;
+            cnt_wait_1sec_ticks <= 0;
             //data            <= 0;
         end
         
@@ -116,35 +110,36 @@ module uart_tx
             end 
     
             WAIT_1S : begin 
-                cnt_data_bit <= 0;
+                cnt_data_bit        <= 0;
                 cnt_wait_1sec_ticks <= cnt_wait_1sec_ticks+1;
-                cnt_data_byte <= char_LEG;
+                cnt_data_byte       <= char_LEG;
             end
             
             START_BIT : begin 
-                cnt_data_bit    <= 0;
-                cnt_wait_1sec_ticks  <= 0;
-                tx_reg          <= 0;
+                cnt_data_bit        <= 0;
+                cnt_wait_1sec_ticks <= 0;
+                tx_reg              <= 0;
             end
             
             DATA_BIT : begin
-                cnt_data_bit <= cnt_data_bit + 1;
-                tx_reg <= char_A[( ( (cnt_data_byte-1)*8)) + cnt_data_bit]; 
+                cnt_data_bit    <= cnt_data_bit + 1;
+                tx_reg          <= char_A[( ((cnt_data_byte-1)*8) ) + cnt_data_bit]; 
                 //data <= (data << 1) | tx_reg;
             end
             
             STOP_BIT : begin
-               cnt_data_bit <= cnt_data_bit + 1;
-               cnt_data_byte <= cnt_data_byte - 1;
+               cnt_data_bit     <= cnt_data_bit + 1;
+               cnt_data_byte    <= cnt_data_byte - 1;
                tx_reg <= 1;
                //data <= 0;
             end  
             
             // 정지 상태니까 HIGH로 놔준다. 
-            ERROR : tx_reg <= 1;
-            default : tx_reg <= 1; 
-        endcase
-    end    
+            ERROR : tx_reg      <= 1;
+            default : tx_reg    <= 1; 
+            endcase
+    end 
+       
 end 
     
 endmodule
