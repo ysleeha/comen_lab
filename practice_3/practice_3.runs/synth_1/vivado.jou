@@ -2,12 +2,12 @@
 # Vivado v2022.2.2 (64-bit)
 # SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
 # IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
-# Start of session at: Sun Jan 28 01:50:28 2024
-# Process ID: 8888
+# Start of session at: Sun Jan 28 07:27:34 2024
+# Process ID: 21824
 # Current directory: C:/comen_lab/practice_3/practice_3.runs/synth_1
-# Command line: vivado.exe -log uart_tx.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_tx.tcl
-# Log file: C:/comen_lab/practice_3/practice_3.runs/synth_1/uart_tx.vds
+# Command line: vivado.exe -log main_rx.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main_rx.tcl
+# Log file: C:/comen_lab/practice_3/practice_3.runs/synth_1/main_rx.vds
 # Journal file: C:/comen_lab/practice_3/practice_3.runs/synth_1\vivado.jou
 # Running On: DESKTOP-GLH3044, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 4, Host memory: 17024 MB
 #-----------------------------------------------------------
-source uart_tx.tcl -notrace
+source main_rx.tcl -notrace
