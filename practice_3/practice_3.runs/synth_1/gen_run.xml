@@ -1,42 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xa7a35tcsg324-1I" LaunchTime="1706394449" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
-  <File Type="PA-TCL" Name="main_rx.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="main_rx_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="main_rx_reports.tcl"/>
-  <File Type="RDS-RDS" Name="main_rx.vds"/>
-  <File Type="RDS-UTIL" Name="main_rx_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="main_rx_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="main_rx.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="main_rx_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="main_rx_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xa7a35tcsg324-1I" LaunchTime="1706569173" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
+  <File Type="PA-TCL" Name="uart_rx.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="uart_rx_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="uart_rx_reports.tcl"/>
+  <File Type="RDS-RDS" Name="uart_rx.vds"/>
+  <File Type="RDS-UTIL" Name="uart_rx_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="uart_rx_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="uart_rx.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="uart_rx_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="uart_rx_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/main_rx.sv">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/uart_rx.sv">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/uart_tx.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/main_light_fsm.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -58,9 +34,25 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/main_light_fsm.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_tx.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="main_rx"/>
+      <Option Name="TopModule" Val="uart_rx"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
