@@ -1,45 +1,82 @@
-
 `timescale 1ns / 1ps
 
 module uart_tx
 (
-    input clk, // fpga clk 12Mhz~50Mhz cmod (주파수 : 20Mhz, 주기 : 0.05us) 
-    input rst,
-    
-    output tx
+    input logic clk, // fpga clk 12Mhz IN cmod (주파수 : 12Mhz, 주기 : 83.333ns) 
+    output logic tx
 );
+
+    logic tx_reg;
+    assign tx = tx_reg;
     
-    logic uart_clk;
+    logic rst;
+    
+    logic mmcm_clk;    
     integer cnt_uart_clk;
+    logic uart_clk;    
     
-    // 1MHz(1ms)에서 1_000_000클럭 대기한다. .
-    localparam WAIT_TICKS = 1_000_000; 
-    logic [28-1:0] cnt_wait_1sec_ticks;
+    // After 1sec(1_000_000), Text print. 
+    localparam WAIT_TICKS = 1_000; 
+    logic [26-1:0] cnt_wait_1sec_ticks;
     
-    localparam char_LEG = 11;
-    reg [(char_LEG*8)-1 : 0] char_A = "Hello world";
-    
-    reg tx_reg;
-    reg [3:0] cnt_data_byte;
-    reg [3:0] cnt_data_bit;
+    localparam char_LEG = 12;
+    logic [(char_LEG*8)-1 : 0] char_A = "Hello world\n";
+    logic [3:0] cnt_data_byte;
+    logic [3:0] cnt_data_bit;
     
     //reg [7:0] cnt_10ms;
     //logic [7:0] data;
     
-    // 20Mhz -> 1Mhz 
-    always @(posedge clk) begin
-        cnt_uart_clk <= cnt_uart_clk + 1; 
+    // 12Mhz -> 50Mhz 
+    mmcm_50m mmcm
+    (
+        //.rese(rst) 왜 이렇게 하면 안되지? 
+        .reset(1'b0),
+        .clk_in1(clk), // IN 12MHz 
         
-        if (cnt_uart_clk == 9) begin 
+        .clk_out1(mmcm_clk) // OUT 50MHz
+     );
+     
+     // FPGA를 데이터적으로 리셋 
+     vio_0 vio
+    (
+        .clk(mmcm_clk),
+        .probe_out0(rst)
+    );
+    
+    // 신호 모니터링, 테스트벤치 대역 
+    ila_0 ila
+    (
+        .clk(clk),                      //clk
+        
+        .probe0(tx),                    //tx                    1bit_num0
+        .probe1(tx_reg),                //tx_reg                1bit_num1
+        .probe2(rst),                   //rst                   1bit_num2
+        .probe3(mmcm_clk),              //mmcm_clk              1bit_num3
+        .probe4(cnt_uart_clk),          //cnt_uart_clk          32bit_num4
+        .probe5(uart_clk),              //uart_clk              1bit_num5
+        .probe6(WAIT_TICKS),            //WAIT_TICKS            32bit_num6
+        .probe7(cnt_wait_1sec_ticks),   //cnt_wait_1sec_ticks   26bit_num7
+        .probe8(char_LEG),              //char_LEG              32bit_num8
+        .probe9(char_A),                //char_A                96bit_num9
+        .probe10(cnt_data_byte),        //cnt_data_byte         4bit_num10
+        .probe11(cnt_data_bit),         //cnt_data_bit          4bit_num11
+        .probe12(state),                //state                 3bit_num12
+        .probe13(next_state)            //next_state            3bit_num13
+    );
+    
+    // frequency : 50Mhz -> 1Mhz
+    // period   : 0.02us -> 1us
+    always @(posedge mmcm_clk) begin
+        cnt_uart_clk <= cnt_uart_clk + 1; 
+        if (cnt_uart_clk == (50/2)-1) begin 
             uart_clk <= ~uart_clk;
             cnt_uart_clk <= 0;
         end 
     end
     
     // 5개의 상태만 있는데 나머지 3개의 값에 대해서는 에러가 나올수 있다. 
-    enum reg [2:0] {RESET, WAIT_1S, START_BIT, DATA_BIT, STOP_BIT, ERROR} state, next_state; 
-    
-    assign tx = tx_reg;
+    enum logic [3-1:0] {RESET, WAIT_1S, START_BIT, DATA_BIT, STOP_BIT, ERROR} state, next_state; 
     
     // State 변경 로직 
     always @ (posedge uart_clk or negedge rst) begin
@@ -52,7 +89,7 @@ module uart_tx
     end
     
     // NEXT State 로직 
-    always @(*) begin 
+    always_comb begin 
         next_state = state;
         
         case (state)
@@ -72,8 +109,6 @@ module uart_tx
         DATA_BIT :
             if(cnt_data_bit >= 8) 
                 next_state = STOP_BIT;
-            else
-                next_state = DATA_BIT;
                 
         STOP_BIT : 
             if(cnt_data_byte == 0) 
@@ -87,9 +122,15 @@ module uart_tx
         endcase
     end
     
+    
     initial begin 
         uart_clk        <= 0;
         cnt_uart_clk    <= 0;
+//        rst             <= 1; 
+//        #100
+//        rst             <= 0;
+//        #100
+//        rst             <= 1;
     end
     
     // Output Logic 
@@ -100,7 +141,6 @@ module uart_tx
             cnt_data_bit        <= 0;
             cnt_data_byte       <= 0;
             cnt_wait_1sec_ticks <= 0;
-            //data            <= 0;
         end
         
         else begin 
@@ -109,7 +149,7 @@ module uart_tx
             RESET : begin 
             end 
     
-            WAIT_1S : begin 
+            WAIT_1S : begin
                 cnt_data_bit        <= 0;
                 cnt_wait_1sec_ticks <= cnt_wait_1sec_ticks+1;
                 cnt_data_byte       <= char_LEG;
@@ -138,8 +178,8 @@ module uart_tx
             ERROR : tx_reg      <= 1;
             default : tx_reg    <= 1; 
             endcase
-    end 
+        end 
        
-end 
+    end 
     
 endmodule

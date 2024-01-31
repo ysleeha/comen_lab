@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log uart_rx.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_rx.tcl
+EAStep vivado -log uart_tx.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_tx.tcl

@@ -1,35 +1,34 @@
 
 `timescale 1ns / 1ps
-
-    // 20Mhz -> 1Mhz
-    // 0.05us -> 1us
     
 module tb_uart_tx();
     
-    reg clk = 0;
+    logic tb_clk;
     
-    logic rst;
-    logic tx;
+//    logic tb_rst;
+    logic tb_tx;
     
     always begin 
-        // 0.25us  high -> low 
-        #25
-        clk = ~clk;
+        // frequency 12Mhz
+        // period 83.33333ns  
+        #41.666
+        tb_clk = ~tb_clk;
     end 
     
-    initial begin 
-        rst = 1;
-        #1000
-        rst = 0; 
-        #1000
-        rst = 1;
+    initial begin
+        tb_clk = 0;
+//        tb_rst = 1;
+//        #1000
+//        tb_rst = 0; 
+//        #1000
+//        tb_rst = 1;
     end
 
     uart_tx DUT
     (
-        .clk(clk), // 10khz (주기 : 0.1ms)  0.05ms 마다 반전 
-        .rst(rst),
-        .tx(tx)
+        .clk(tb_clk), // 12M (주기 : 0.1ms)  0.05ms 마다 반전 
+    //    .rst(tb_rst),
+        .tx(tb_tx)
     ); 
     
 endmodule

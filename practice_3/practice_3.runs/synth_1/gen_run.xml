@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xa7a35tcsg324-1I" LaunchTime="1706569173" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
-  <File Type="PA-TCL" Name="uart_rx.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="uart_rx_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="uart_rx_reports.tcl"/>
-  <File Type="RDS-RDS" Name="uart_rx.vds"/>
-  <File Type="RDS-UTIL" Name="uart_rx_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="uart_rx_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="uart_rx.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="uart_rx_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="uart_rx_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1706657141" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/main.dcp">
+  <File Type="PA-TCL" Name="uart_tx.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="uart_tx_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="uart_tx_reports.tcl"/>
+  <File Type="RDS-RDS" Name="uart_tx.vds"/>
+  <File Type="RDS-UTIL" Name="uart_tx_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="uart_tx_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="uart_tx.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="uart_tx_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="uart_tx_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/uart_tx.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/uart_rx.sv">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -42,22 +50,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/uart_tx.sv">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="uart_rx"/>
+      <Option Name="TopModule" Val="uart_tx"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/uart_tx.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/uart_tx.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -79,4 +86,7 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="vio_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mmcm_50m"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_0"/>
 </GenRun>
