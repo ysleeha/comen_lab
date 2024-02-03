@@ -1,0 +1,10 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../practice_3.gen/sources_1/ip/mmcm_50m" \
+"../../../../practice_3.srcs/sources_1/new/main.sv" \
+"../../../../practice_3.srcs/sim_1/new/tb_main.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
