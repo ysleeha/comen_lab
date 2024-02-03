@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2.2 (64-bit)
+# SW Build 3788238 on Tue Feb 21 20:00:34 MST 2023
+# IP Build 3783773 on Tue Feb 21 23:41:56 MST 2023
+# Start of session at: Fri Feb  2 07:15:05 2024
+# Process ID: 23080
+# Current directory: C:/comen_lab/practice_4/practice_4.runs/fifo_8bit_synth_1
+# Command line: vivado.exe -log fifo_8bit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fifo_8bit.tcl
+# Log file: C:/comen_lab/practice_4/practice_4.runs/fifo_8bit_synth_1/fifo_8bit.vds
+# Journal file: C:/comen_lab/practice_4/practice_4.runs/fifo_8bit_synth_1\vivado.jou
+# Running On: DESKTOP-GLH3044, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 4, Host memory: 17024 MB
+#-----------------------------------------------------------
+source fifo_8bit.tcl -notrace

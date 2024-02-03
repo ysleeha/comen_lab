@@ -1,0 +1,7 @@
+0.7
+2020.2
+Feb 21 2023
+20:21:35
+C:/comen_lab/practice_4/practice_4.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,uvm,,,,,,
+C:/comen_lab/practice_4/practice_4.srcs/sim_1/new/tb_uart_receiv.sv,1706994262,systemVerilog,,,,tb_uart_receiv,,uvm,,,,,,
+C:/comen_lab/practice_4/practice_4.srcs/sources_1/new/uart_receiv.sv,1706994083,systemVerilog,,C:/comen_lab/practice_4/practice_4.srcs/sim_1/new/tb_uart_receiv.sv,,uart_receiv,,uvm,,,,,,
